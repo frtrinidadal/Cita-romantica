@@ -1,4 +1,4 @@
-const btnRandom = document.querySelector("#random-btn")
+const btnAleatorio = document.getElementById("btn-aleatorio");
 
 function moverAleatoriamente(btn) {
     btn.style.fontWeight = "bolder";
