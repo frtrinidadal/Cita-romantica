@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+  position: relative;
+  background: radial-gradient(circle at top right, #e0f2fe, #bae6fd, #e0f7fa);
+}
+
+/* Modos de fondo específicos */
+body.bg-duda {
+  background: radial-gradient(circle at center, #fef3c7, #fed7aa, #fde68a);
+}
+
+body.bg-exito {
+  background: radial-gradient(circle at top, #dcfce7, #bbf7d0, #bae6fd);
+}
+
+body.bg-triste {
+  background: radial-gradient(circle at center, #f1f5f9, #cbd5e1, #94a3b8);
+}
+
+/* Fondo de iconos flotantes */
+.floating-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.icon-float {
+  position: absolute;
+  font-size: 2.2rem;
+  opacity: 0.25;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(110vh) rotate(0deg); opacity: 0.1; }
+  50% { opacity: 0.35; }
+  100% { transform: translateY(-15vh) rotate(360deg); opacity: 0; }
+}
+
+/* Tarjeta contenedora */
+.recipiente {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  padding: 38px 28px;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(14, 116, 144, 0.15);
+  text-align: center;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  animation: popIn 0.4s ease-out forwards;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.92) translateY(15px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.card-icon {
+  font-size: 4rem;
+  margin-bottom: 12px;
+  display: inline-block;
+  animation: softBounce 2.5s infinite ease-in-out;
+}
+
+@keyframes softBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+h1 {
+  color: #0369a1;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+p {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.badge {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0284c7;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Botones */
+.boton-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  min-height: 60px;
+}
+
+.btn {
+  padding: 12px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-si {
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+}
+
+.btn-si:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
+}
+
+.btn-no {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1.5px solid #cbd5e1;
+}
+
+.btn-no:hover {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+/* Lista motivacional */
+.highlights {
+  background: linear-gradient(135deg, #f0fdf4, #e0f2fe);
+  border-radius: 18px;
+  padding: 16px 20px;
+  margin-bottom: 22px;
+  text-align: left;
+  border: 1.5px solid #bae6fd;
+}
+
+.highlights li {
+  list-style: none;
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
